@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Network_Library">
+      <HintPath>..\..\..\3_MyDLL\NetworkLibrary\Network_Library\bin\Release\Network_Library.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,16 +48,48 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
+    <Compile Include="ProjectSRC\Controller\Client\ClientSocket.cs" />
     <Compile Include="ProjectSRC\Controller\GUIController.cs" />
     <Compile Include="ProjectSRC\Controller\Serializer.cs" />
+    <Compile Include="ProjectSRC\Controller\Server\ServerSocket.cs" />
+    <Compile Include="ProjectSRC\GUI\GUICreateServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectSRC\GUI\GUICreateServer.Designer.cs">
+      <DependentUpon>GUICreateServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectSRC\GUI\GUIJoinServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectSRC\GUI\GUIJoinServer.Designer.cs">
+      <DependentUpon>GUIJoinServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectSRC\GUI\GUIView.ChatBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ProjectSRC\GUI\GUIView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ProjectSRC\GUI\GUIView.Designer.cs">
       <DependentUpon>GUIView.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProjectSRC\GUI\GUIView.Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectSRC\Model\ClientModel.cs" />
     <Compile Include="ProjectSRC\Model\GUIModel.cs" />
+    <Compile Include="ProjectSRC\Model\ServerModel.cs" />
+    <Compile Include="ProjectSRC\Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ProjectSRC\GUI\GUICreateServer.resx">
+      <DependentUpon>GUICreateServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectSRC\GUI\GUIJoinServer.resx">
+      <DependentUpon>GUIJoinServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectSRC\GUI\GUIView.resx">
+      <DependentUpon>GUIView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

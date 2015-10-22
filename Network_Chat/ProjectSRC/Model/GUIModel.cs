@@ -6,25 +6,25 @@
 //     Mail:     mailto:needdragon@gmail.com 
 //     Twitter: https://twitter.com/NeedDragon
 
+using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace Network_Chat.ProjectSRC.Model {
     [XmlRoot("GUIModel")]
-    //TODO: Add all classes that need to be included here
-    //[XmlInclude(typeof(SomeModel)), XmlInclude(typeof(SomeClass))] // include classes, that are serialized here
+    [XmlInclude(typeof(User)), XmlInclude(typeof(ServerModel)), XmlInclude(typeof(ClientModel))] // include classes, that are serialized here
     public class GUIModel {
-        //TODO: Add fields that needs to be serialized
-        //Add fields normally like so:
-        //  public int SomeInt { get; set; }
+        [XmlArray("Users")]
+        [XmlArrayItem("User")]
+        public List<User> Users { get; set; }
 
-        //Add Lists like so:
-        //  [XmlArray("SomeUberName")]
-        //  [XmlArrayItem("SomeSubName")]
-        //  public List<SomeClass> AllSomething { get; set; } 
+        public ServerModel ServerModel { get; set; }
+        public ClientModel ClientModel { get; set; }
 
         public GUIModel() {
-            //AllSomething = new List<SomeClass>();
+            Users = new List<User>();
+            ServerModel = new ServerModel();
+            ClientModel = new ClientModel();
         }
     }
 }
