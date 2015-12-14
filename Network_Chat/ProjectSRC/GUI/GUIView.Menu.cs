@@ -7,6 +7,7 @@
 //     Twitter: https://twitter.com/NeedDragon
 
 using System;
+using System.Windows.Forms;
 
 namespace Network_Chat.ProjectSRC.GUI {
     public partial class GUIView {
@@ -21,7 +22,7 @@ namespace Network_Chat.ProjectSRC.GUI {
             gui.ShowDialog();
         }
         private void ExitForm(object sender, EventArgs e) {
-
+            Application.Exit();
         }
     }
 }

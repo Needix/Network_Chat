@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DebugContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProjectSRC\Controller\Client\ClientSocket.cs" />
     <Compile Include="ProjectSRC\Controller\GUIController.cs" />

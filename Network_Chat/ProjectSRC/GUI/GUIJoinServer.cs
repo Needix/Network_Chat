@@ -26,13 +26,11 @@ namespace Network_Chat.ProjectSRC.GUI {
         private void JoinServer(object sender, EventArgs e) {
             try {
                 int port = Convert.ToInt32(tb_serverInfo_port.Text);
-                String ip = tb_serverInfo_ip.Text;
-                String username = tb_cred_username.Text;
-                String pw = tb_cred_password.Text;
+                string ip = tb_serverInfo_ip.Text;
+                string username = tb_cred_username.Text;
+                string pw = tb_cred_password.Text;
                 _controller.JoinServer(username, pw, ip, port);
-            } catch(FormatException) {
-
-            }
+            } catch(FormatException) { }
             this.Close();
         }
     }

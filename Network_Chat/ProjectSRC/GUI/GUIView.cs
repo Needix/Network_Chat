@@ -7,6 +7,7 @@
 //     Twitter: https://twitter.com/NeedDragon
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Threading;
@@ -17,6 +18,7 @@ using Network_Chat.ProjectSRC.Model;
 namespace Network_Chat.ProjectSRC.GUI {
     public partial class GUIView : Form {
         private GUIController _controller;
+        public String SendString { get { return tb_chatToSend.Text; } }
 
         public GUIView() {
             InitializeComponent();
@@ -37,7 +39,22 @@ namespace Network_Chat.ProjectSRC.GUI {
         }
 
         public void UpdateView(GUIModel model) {
-            //TODO: Add update code here (update gui components from model data)
+            UpdateChatbox(model);
+            UpdateUserlist(model);
+        }
+
+        public void UpdateUserlist(GUIModel model) {
+            listBox_user_users.Items.Clear();
+            foreach(User s in model.Users) {
+                listBox_user_users.Items.Add(s.Username);
+            }
+        }
+
+        public void UpdateChatbox(GUIModel model) {
+            listView_chatbox.Items.Clear();
+            foreach(string s in model.MessageList) {
+                listView_chatbox.Items.Add(s);
+            }
         }
     }
 }

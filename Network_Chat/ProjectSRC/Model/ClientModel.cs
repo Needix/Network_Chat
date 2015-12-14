@@ -10,7 +10,7 @@ using System;
 
 namespace Network_Chat.ProjectSRC.Model {
     public class ClientModel {
-        public String Username { get; set; }
-        public String Password { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

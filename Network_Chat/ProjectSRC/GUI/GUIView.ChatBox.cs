@@ -14,19 +14,19 @@ using System.Windows.Forms;
 
 namespace Network_Chat.ProjectSRC.GUI {
     public partial class GUIView {
-        public void AddErrorInfo(String text) {
+        public void AddErrorInfo(string text) {
             AddInfo(text, Color.Red);
         }
 
-        public void AddInfoInfo(String text) {
+        public void AddInfoInfo(string text) {
             AddInfo(text, Color.White);
         }
 
-        public void AddWarningInfo(String text) {
+        public void AddWarningInfo(string text) {
             AddInfo(text, Color.Orange);
         }
 
-        private void AddInfo(String text, Color color) {
+        private void AddInfo(string text, Color color) {
             if(!this.IsHandleCreated) {
                 Debug.WriteLine("ERROR: GUI| Trying to add \""+text+"\" to ListViewInfo while handle is invalid!");
                 return;

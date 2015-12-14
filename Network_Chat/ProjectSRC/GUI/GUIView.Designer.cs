@@ -25,16 +25,17 @@
         private void InitializeComponent() {
             this.splitContainer_main_chat_user = new System.Windows.Forms.SplitContainer();
             this.splitContainer_main_messages_chat = new System.Windows.Forms.SplitContainer();
-            this.b_chat_send = new System.Windows.Forms.Button();
-            this.tb_chatToSend = new System.Windows.Forms.TextBox();
-            this.listBox_user_users = new System.Windows.Forms.ListBox();
+            this.listView_chatbox = new System.Windows.Forms.ListView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_createServer = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_joinServer = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.listView_chatbox = new System.Windows.Forms.ListView();
+            this.menu_exit = new System.Windows.Forms.ToolStripMenuItem();
+            this.b_chat_send = new System.Windows.Forms.Button();
+            this.tb_chatToSend = new System.Windows.Forms.TextBox();
+            this.listBox_user_users = new System.Windows.Forms.ListBox();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer_main_chat_user)).BeginInit();
             this.splitContainer_main_chat_user.Panel1.SuspendLayout();
             this.splitContainer_main_chat_user.Panel2.SuspendLayout();
@@ -83,36 +84,18 @@
             this.splitContainer_main_messages_chat.SplitterDistance = 439;
             this.splitContainer_main_messages_chat.TabIndex = 0;
             // 
-            // b_chat_send
+            // listView_chatbox
             // 
-            this.b_chat_send.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.b_chat_send.Location = new System.Drawing.Point(689, 2);
-            this.b_chat_send.Name = "b_chat_send";
-            this.b_chat_send.Size = new System.Drawing.Size(75, 26);
-            this.b_chat_send.TabIndex = 1;
-            this.b_chat_send.Text = "Send";
-            this.b_chat_send.UseVisualStyleBackColor = true;
-            // 
-            // tb_chatToSend
-            // 
-            this.tb_chatToSend.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_chatToSend.Location = new System.Drawing.Point(3, 3);
-            this.tb_chatToSend.Multiline = true;
-            this.tb_chatToSend.Name = "tb_chatToSend";
-            this.tb_chatToSend.Size = new System.Drawing.Size(683, 25);
-            this.tb_chatToSend.TabIndex = 0;
-            // 
-            // listBox_user_users
-            // 
-            this.listBox_user_users.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox_user_users.FormattingEnabled = true;
-            this.listBox_user_users.Location = new System.Drawing.Point(0, 0);
-            this.listBox_user_users.Name = "listBox_user_users";
-            this.listBox_user_users.Size = new System.Drawing.Size(176, 474);
-            this.listBox_user_users.TabIndex = 0;
+            this.listView_chatbox.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.listView_chatbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView_chatbox.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.listView_chatbox.Location = new System.Drawing.Point(0, 24);
+            this.listView_chatbox.Name = "listView_chatbox";
+            this.listView_chatbox.Size = new System.Drawing.Size(764, 415);
+            this.listView_chatbox.TabIndex = 2;
+            this.listView_chatbox.UseCompatibleStateImageBehavior = false;
+            this.listView_chatbox.View = System.Windows.Forms.View.Details;
             // 
             // menuStrip1
             // 
@@ -147,25 +130,47 @@
             this.menu_joinServer.Size = new System.Drawing.Size(152, 22);
             this.menu_joinServer.Text = "Join Server";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
             // menu_exit
             // 
             this.menu_exit.Name = "menu_exit";
             this.menu_exit.Size = new System.Drawing.Size(152, 22);
             this.menu_exit.Text = "Exit";
             // 
-            // toolStripSeparator1
+            // b_chat_send
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.b_chat_send.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.b_chat_send.Location = new System.Drawing.Point(689, 2);
+            this.b_chat_send.Name = "b_chat_send";
+            this.b_chat_send.Size = new System.Drawing.Size(75, 26);
+            this.b_chat_send.TabIndex = 1;
+            this.b_chat_send.Text = "Send";
+            this.b_chat_send.UseVisualStyleBackColor = true;
             // 
-            // listView_chatbox
+            // tb_chatToSend
             // 
-            this.listView_chatbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView_chatbox.Location = new System.Drawing.Point(0, 24);
-            this.listView_chatbox.Name = "listView_chatbox";
-            this.listView_chatbox.Size = new System.Drawing.Size(764, 415);
-            this.listView_chatbox.TabIndex = 2;
-            this.listView_chatbox.UseCompatibleStateImageBehavior = false;
+            this.tb_chatToSend.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_chatToSend.Location = new System.Drawing.Point(3, 3);
+            this.tb_chatToSend.Multiline = true;
+            this.tb_chatToSend.Name = "tb_chatToSend";
+            this.tb_chatToSend.Size = new System.Drawing.Size(683, 25);
+            this.tb_chatToSend.TabIndex = 0;
+            // 
+            // listBox_user_users
+            // 
+            this.listBox_user_users.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox_user_users.FormattingEnabled = true;
+            this.listBox_user_users.Location = new System.Drawing.Point(0, 0);
+            this.listBox_user_users.Name = "listBox_user_users";
+            this.listBox_user_users.Size = new System.Drawing.Size(176, 474);
+            this.listBox_user_users.TabIndex = 0;
             // 
             // GUIView
             // 
@@ -206,5 +211,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem menu_exit;
         private System.Windows.Forms.ListView listView_chatbox;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

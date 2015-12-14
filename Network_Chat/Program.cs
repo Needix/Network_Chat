@@ -15,11 +15,7 @@ namespace Network_Chat {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            GUIView view = new GUIView();
-            GUIController controller = new GUIController(view); //Controller is saved in view as reference
-            view.RegisterController(controller);
-
-            Application.Run(view);
+            Application.Run(new DebugContext());
         }
     }
 }

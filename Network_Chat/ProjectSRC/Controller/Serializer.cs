@@ -13,7 +13,7 @@ using Network_Chat.ProjectSRC.Model;
 
 namespace Network_Chat.ProjectSRC.Controller {
     public class Serializer {
-        private const String SAVE_PATH = "save.xml";
+        private const string SAVE_PATH = "save.xml";
         private readonly GUIController _controller;
 
         public Serializer(GUIController controller) {

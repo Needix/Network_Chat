@@ -18,12 +18,12 @@ namespace Network_Chat.ProjectSRC.Model {
             SuperAdmin,
         }
 
-        public String Username { get; set; }
-        public String Password { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
         public Ranks Rank { get; set; }
 
         public User() { }
-        public User(String username, String password, Ranks rank) {
+        public User(string username, string password, Ranks rank) {
             Username = username;
             Password = password;
             Rank = rank;

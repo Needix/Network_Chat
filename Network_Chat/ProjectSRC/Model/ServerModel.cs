@@ -10,7 +10,7 @@ using System;
 
 namespace Network_Chat.ProjectSRC.Model {
     public class ServerModel {
-        public String Servername { get; set; }
+        public string Servername { get; set; }
         public int Port { get; set; }
         public int MaxPlayer { get; set; } 
     }
